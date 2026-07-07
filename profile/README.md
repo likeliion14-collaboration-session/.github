@@ -14,10 +14,8 @@
 ## deploy URL
 ### Front: [https://walkord.netlify.app](https://walkord.netlify.app)
 
-###  Swagger
-
-배포 환경에서 전체 API를 직접 테스트해볼 수 있습니다.
-- [https://api.chungs.store/swagger-ui/index.html](https://api.chungs.store/swagger-ui/index.html)
+### 배포 환경에서 전체 API를 직접 테스트해볼 수 있습니다.
+###  Swagger: [https://api.chungs.store/swagger-ui/index.html](https://api.chungs.store/swagger-ui/index.html)
 
 ## 🤔 기획 배경 / 문제 상황
 
