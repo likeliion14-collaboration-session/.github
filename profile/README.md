@@ -2,6 +2,10 @@
 ### 이곳은 서경대학교 멋쟁이 사자처럼 전체 파트 연합세션을 위한 Organization입니다.
 
 ---
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/86b06dde-d683-4dc9-94c9-dcbc03fd1873" />
+
+<br>
+<br>
 
 ## 📍 프로젝트 소개
 
