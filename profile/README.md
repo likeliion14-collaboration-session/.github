@@ -71,6 +71,12 @@
 
 <br>
 
+## ERD
+<img width="2650" height="832" alt="likelion_collb (5)" src="https://github.com/user-attachments/assets/78454106-5756-4504-8ad7-64d47f09bf4f" />
+
+<br>
+<br>
+
 ## 🛠 기술 스택
 
 **Backend**
