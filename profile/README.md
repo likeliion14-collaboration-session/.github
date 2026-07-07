@@ -11,6 +11,14 @@
 
 세미 해커톤 주제 중 **"③ 자발적인 공유와 확산"**을 기반으로 기획되었습니다.
 
+## deploy URL
+### Front: [https://walkord.netlify.app](https://walkord.netlify.app)
+
+###  Swagger
+
+배포 환경에서 전체 API를 직접 테스트해볼 수 있습니다.
+- [https://api.chungs.store/swagger-ui/index.html](https://api.chungs.store/swagger-ui/index.html)
+
 ## 🤔 기획 배경 / 문제 상황
 
 - SNS에 무언가를 올릴 때마다 사진을 고르고 편집하는 과정에 부담을 느끼는 사람이 많습니다. 반면 자동으로 만들어진 결과물(예: Spotify Wrapped)은 부담 없이 공유하고 싶어지는 경향이 있습니다.
@@ -72,7 +80,46 @@
 - Let's Encrypt (SSL 인증서)
 - Netlify (프론트엔드 배포)
 
-## 📑 API 문서
+## 📑 API 명세서
 
-- **Swagger UI**: [https://api.chungs.store/swagger-ui/index.html](https://api.chungs.store/swagger-ui/index.html)
-- **Notion API 명세서**: (팀 노션 워크스페이스 내 "API 기본 명세서" 페이지 참고)
+### 사용자 (User)
+| Method | 경로 | 기능 |
+|---|---|---|
+| POST | `/users/login` | 닉네임 입력 (로그인 대체, 없으면 신규 생성) |
+| POST | `/records/start` | 오늘의 동선 기록 시작 |
+
+### 동선 (Track)
+| Method | 경로 | 기능 |
+|---|---|---|
+| POST | `/locations` | 현재 위치 저장 (실시간 위치 + 동선 이력 동시 갱신) |
+| GET | `/track-points` | 특정 날짜의 동선 좌표 목록 조회 |
+| GET | `/users/live-location` | 현재 위치 조회 |
+
+### 사진 (Photo)
+| Method | 경로 | 기능 |
+|---|---|---|
+| POST | `/photos` | 사진 업로드 (EXIF 위치·시각 자동 추출) |
+| GET | `/photos/pins` | 지도 표시용 사진 핀 목록 조회 |
+| GET | `/photos/{photoId}` | 사진 상세 조회 |
+| PATCH | `/photos/{photoId}` | 사진 코멘트·아이콘 수정 |
+| DELETE | `/photos/{photoId}` | 사진 삭제 |
+
+### 카드 (Card)
+| Method | 경로 | 기능 |
+|---|---|---|
+| GET | `/card/candidates` | 카드 대표 사진 후보 및 동선 조회 |
+| POST | `/card` | 오늘의 동선 카드 확정 발급 |
+
+### 초대 (Invite)
+| Method | 경로 | 기능 |
+|---|---|---|
+| POST | `/invites` | 초대 코드 생성 |
+| POST | `/invites/accept` | 초대 코드 입력하여 연동 |
+
+### 연동 및 공유 (Connection / Share)
+| Method | 경로 | 기능 |
+|---|---|---|
+| GET | `/users/{userId}/connections` | 연동된 사용자 목록 조회 |
+| PATCH | `/connections/{connectionId}/sharing` | 특정 상대방에 대한 공유 켜기/끄기 |
+
+
